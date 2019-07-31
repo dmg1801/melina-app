@@ -1,0 +1,29 @@
+Montag 29.07.2019
+
+browser-sync start --server --directory --files "**/*"
+
+Formular chracteristics:
+1) Nombre del conejo
+2) Género del conejo
+3) Castrado o no
+4) Edad del conejo
+- Fecha de nacimiento
+- "si no sabes la fecha exactamente, pon lo que piensas"
+5) Peso del conejo: Manual
+6) vacunas
+7) e Cuniculi
+8) enfermedad espcial: Manual
+9) Orejas pendientes o no
+10) Ubicación:
+- Ciudad
+- cuanto es el máximo de kilómetros que puede viajar por su conejo
+- opción de viajas a cualquier parte de Alemania.
+11) Datos de contacto:
+- tlf o correo electrónico
+12) el conejo vive afuera de la casa o adentro de la casa (el conejo actual)
+13) pago de protección. manual 15 o 20 euros por la protección del animal
+14) texto libre sobre el conejo
+
+
+
+
