@@ -1,0 +1,22 @@
+{
+  "name": "melina-app",
+  "version": "1.0.0",
+  "description": "application formular for Kaninchenseele",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmg1801/melina-app.git"
+  },
+  "author": "Diego Mongay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmg1801/melina-app/issues"
+  },
+  "homepage": "https://github.com/dmg1801/melina-app#readme"
+}
