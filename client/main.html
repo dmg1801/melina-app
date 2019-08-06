@@ -23,7 +23,8 @@
           <input type="text" name="name" placeholder="Kaninchen Name" data-ng-model="kaninchen.name" required
             minlength="2">
           <span ng-if="rabbitForm.$invalid">* </span>
-          <span data-ng-if="kaninchen.name" class="filledData">Geben Sie Ein Name</span>
+          <span data-ng-if="kaninchen.name" class="filledData">Kaninchen Name:</span>
+          <span>{{ kaninchen.name }}</span>
           <br>
           <span
             ng-if="(rabbitForm.username.$error.minlength || rabbitForm.username.$error.required) && rabbitForm.username.$touched">
