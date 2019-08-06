@@ -21,7 +21,7 @@
 
           <!-- NAME -->
           <input type="text" name="name" placeholder="Kaninchen Name" data-ng-model="kaninchen.name" required
-            minlength="2">
+            minlength="1">
           <span ng-if="rabbitForm.$invalid">* </span>
           <span data-ng-if="kaninchen.name" class="filledData">Kaninchen Name:</span>
           <span>{{ kaninchen.name }}</span>
@@ -78,8 +78,9 @@
 
           <!-- GEWICHT -->
           <input type="number" name="weight" placeholder="Kaninchen Gewicht" data-ng-model="kaninchen.weight" required
-            minlength="4" ng-maxlength="10">
+            minlength="1" ng-maxlength="10">
           <span ng-if="rabbitForm.$invalid">* </span>
+          <span data-ng-if="kaninchen.wieight">Kaninchen Gewicht: </span>
           <span class="filledData">{{ kaninchen.weight }}</span>
           <br>
           <span
@@ -91,6 +92,7 @@
           <!-- CITY -->
           <input type="text" name="city" placeholder="Stadt" data-ng-model="kaninchen.city" required>
           <span ng-if="rabbitForm.$invalid">* </span>
+          <span data-ng-if="kaninchen.city">Stadt: </span>
           <span class="filledData">{{ kaninchen.city }}</span>
           <br>
           <span ng-if="rabbitForm.email.$invalid && rabbitForm.email.$touched">
@@ -167,18 +169,14 @@
           </div>
           <br>
 
-          <!-- WARRANTY -->
+          <!-- VALUE -->
           <div>
-            <span>Möchten Sie 20€ für die Kaninchenversicherung bezahlen?</span>
+            <span>Kaninchen Schutzgebühr</span>
           </div>
-          <div>
-            <label for="ensuranceYes">Ja</label>
-            <input type="radio" name="ensurance" id="ensuranceYes" data-ng-model="kaninchen.ensuranceYes">
-          </div>
-          <div>
-            <label for="ensuranceNo">Nein</label>
-            <input type="radio" name="ensurance" id="ensuranceYes" data-ng-model="kaninchen.ensuranceNo">
-          </div>
+          <div>            
+            <input type="number" name="value" id="value" data-ng-model="kaninchen.value">
+            <span>€</span>
+          </div>          
           <br>
 
           <!-- CONTACT DATA -->
@@ -190,28 +188,28 @@
                   <input type="text" name="ownerName" placeholder="Besitzer Name" data-ng-model="kaninchen.ownerName"
                     required minlength="2" ng-maxlength="20">
                   <span ng-if="rabbitForm.$invalid">* </span>
-                  <span class="filledData">{{ kaninchen.ownerName }}</span>
+                  <span class="filledData" data-ng-if="kaninchen.ownerName">Besitzer Name</span>
                 </div>
                 <br>
               <div>
                   <input type="text" name="ownerLasName" placeholder="Besitzer Nachname" data-ng-model="kaninchen.ownerLasName"
                     required minlength="2" ng-maxlength="20">
-                  <span ng-if="rabbitForm.$invalid">* </span>
-                  <span class="filledData">{{ kaninchen.ownerLasName }}</span>
+                  <span ng-if="rabbitForm.$invalid">* </span>                  
+                  <span class="filledData" data-ng-if="kaninchen.ownerLastName">Besitzer Nachname</span>
                 </div>
                 <br>
               <div>
                 <input type="number" name="phoneNumber" placeholder="Telefonnummer" data-ng-model="kaninchen.phoneNumber"
                   required minlength="4" ng-maxlength="20">
                 <span ng-if="rabbitForm.$invalid">* </span>
-                <span class="filledData">{{ kaninchen.phoneNumber }}</span>
+                <span class="filledData" data-ng-if="kaninchen.phoneNumber">Telefonnummer</span>
               </div>
               <br>
               <div>
-                <input type="text" name="email" placeholder="E-mail" data-ng-model="kaninchen.email" required
+                <input type="text" name="email" placeholder="E-Mail" data-ng-model="kaninchen.email" required
                   minlength="4" ng-maxlength="40">
                 <span ng-if="rabbitForm.$invalid">* </span>
-                <span class="filledData">{{ kaninchen.email }}</span>
+                <span class="filledData" data-ng-if="kaninchen.email">E-Mail</span>
               </div>
             </div>
             <br>
