@@ -80,7 +80,7 @@
           <input type="number" name="weight" placeholder="Kaninchen Gewicht" data-ng-model="kaninchen.weight" required
             minlength="1" ng-maxlength="10">
           <span ng-if="rabbitForm.$invalid">* </span>
-          <span data-ng-if="kaninchen.wieight">Kaninchen Gewicht: </span>
+          <span data-ng-if="kaninchen.weight">Kaninchen Gewicht: </span>
           <span class="filledData">{{ kaninchen.weight }}</span>
           <br>
           <span
@@ -192,7 +192,7 @@
                 </div>
                 <br>
               <div>
-                  <input type="text" name="ownerLasName" placeholder="Besitzer Nachname" data-ng-model="kaninchen.ownerLasName"
+                  <input type="text" name="ownerLasName" placeholder="Besitzer Nachname" data-ng-model="kaninchen.ownerLastName"
                     required minlength="2" ng-maxlength="20">
                   <span ng-if="rabbitForm.$invalid">* </span>                  
                   <span class="filledData" data-ng-if="kaninchen.ownerLastName">Besitzer Nachname</span>

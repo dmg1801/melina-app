@@ -17,7 +17,9 @@
     kaninchen.weight = null;
     kaninchen.city = null;
     kaninchen.age = null;
-
+    kaninchen.ownerName = null;
+    kaninchen.ownerLastName = null;
+    kaninchen.value = null;
     //text field
     kaninchen.comment = [];
 
