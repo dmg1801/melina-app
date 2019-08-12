@@ -46,12 +46,12 @@
       kaninchen.preLoadData = function() {
         //text variables
       kaninchen.name = "Félix";
-      kaninchen.weight = "3.2";
+      kaninchen.weight = 3.2;
       kaninchen.city = "München";
-      kaninchen.age = "5";
+      kaninchen.age = 5;
       kaninchen.ownerName = "Theressa";
       kaninchen.ownerLastName = "Sollbrecht";
-      kaninchen.value = "1500";
+      kaninchen.value = 1500;
       //text field
       kaninchen.comment = ['Ein super Toll Kaninchen. Ja, es ist alle :D'];
 
@@ -75,7 +75,7 @@
       kaninchen.phoneNumber = "+49 17658881871";
       };
 
-      
+
       kaninchen.myData = [{
         "name": kaninchen.name,
         "weight": kaninchen.weight,
