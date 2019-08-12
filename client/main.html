@@ -22,7 +22,7 @@
   <div data-ng-controller="kaninchenController as kaninchen">
     <div class="alignBox">
       <h3>Kaninchenseele Formular</h3>
-      <button data-ng-click="kaninchen.preLoadData();">pre-Load Data</button>
+      <button ng-click="kaninchen.preLoadData();">pre-Load Data</button>
       <fieldset>
         <form name='rabbitForm' novalidate>
 
@@ -238,7 +238,7 @@
         </form>
       </fieldset>
       <br>
-
+      <div ui-grid="{ data: kaninchen.myData }" class="myGrid"></div>
 
       <div id="info" ng-if="sign.completed" class="itemsToDisplay">
         <p class="succesMessage"> All the data provided has been saved on the "My Info" seccion</p><br>

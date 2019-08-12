@@ -10,7 +10,7 @@
     function kaninchenController() {
       var kaninchen = this;
 
-      kaninchen = {};
+      // kaninchen = {};
 
       //text variables
       kaninchen.name = null;
@@ -43,7 +43,7 @@
       kaninchen.phoneNumber = null;
 
 
-      kaninchen.preLoadData = function(){
+      kaninchen.preLoadData = function() {
         //text variables
       kaninchen.name = "Félix";
       kaninchen.weight = "3.2";
@@ -75,7 +75,7 @@
       kaninchen.phoneNumber = "+49 17658881871";
       };
 
-
+      
       kaninchen.myData = [{
         "name": kaninchen.name,
         "weight": kaninchen.weight,
