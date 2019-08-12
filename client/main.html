@@ -7,7 +7,13 @@
   <meta name="keywords" content="rabbit, kaninchen, krankheit">
   <meta name="author" content="M. Klein, D. Mongay">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <script src="../lib/angular.min.js"></script>
+
+  <script src="../lib/ui-grid.min.js"></script>
+  <link rel="styleSheet" href="../lib/ui-grid.min.css"/>
+  <link rel="styleSheet" href="../style/default.css"/>
+  
   <script src="src/main.js"></script>
   <title>Kaninchenseele Formular</title>
 </head>
@@ -16,6 +22,7 @@
   <div data-ng-controller="kaninchenController as kaninchen">
     <div class="alignBox">
       <h3>Kaninchenseele Formular</h3>
+      <button data-ng-click="kaninchen.preLoadData">pre-Load Data</button>
       <fieldset>
         <form name='rabbitForm' novalidate>
 
