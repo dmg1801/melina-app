@@ -43,7 +43,7 @@
       kaninchen.phoneNumber = null;
 
 
-      kaninchen.preLoadData = function(){
+      $scope.preLoadData = function(){
         //text variables
       kaninchen.name = "Félix";
       kaninchen.weight = "3.2";
