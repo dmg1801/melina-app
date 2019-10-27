@@ -7,7 +7,7 @@
   <meta name="keywords" content="rabbit, kaninchen, krankheit">
   <meta name="author" content="M. Klein, D. Mongay">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular-touch.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular-animate.js"></script>
@@ -20,234 +20,261 @@
   <script src="http://ui-grid.info/docs/grunt-scripts/excel-builder.dist.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/angular-ui/bower-ui-grid/ui-grid.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/angular-ui/bower-ui-grid/ui-grid.min.css" type="text/css">
- 
-  
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
   <link rel="stylesheet" href="../style/default.css" type="text/css">
   <script src="src/main.js"></script>
   <title>Kaninchenseele Formular</title>
 </head>
 
 <body data-ng-app="kaninchenApp">
-  <div data-ng-controller="kaninchenController as kaninchen">
+  <div class="container-fluid" data-ng-controller="kaninchenController as kaninchen">
     <div class="alignBox">
-      <h3>Kaninchenseele Formular</h3>
-      <button ng-click="kaninchen.preLoadData();">pre-Load Data</button>
-      <fieldset>
-        <form name='rabbitForm' novalidate>
 
-          <!-- NAME -->
-          <input type="text" name="name" placeholder="Kaninchen Name" data-ng-model="kaninchen.name" required
-            minlength="1">
-          <span ng-if="rabbitForm.$invalid">* </span>
-          <span data-ng-if="kaninchen.name" class="filledData">Kaninchen Name:</span>
-          <span>{{ kaninchen.name }}</span>
-          <br>
-          <span
-            ng-if="(rabbitForm.username.$error.minlength || rabbitForm.username.$error.required) && rabbitForm.username.$touched">
-            kaninchen name must be 2 characters long
-          </span>
-          <br>
-
-          <!-- GENDER -->
-          <div>
-            <span>Geschlecht</span>
-          </div>
-          <div>
-            <label for="male">Männlich</label>
-            <input type="radio" name="genderSelect" id="male" data-ng-model="kaninchen.male">
-          </div>
-          <div>
-            <label for="female">Weiblich</label>
-            <input type="radio" name="genderSelect" id="female" data-ng-model="kaninchen.female">
-          </div>
-          <br>
-
-          <!-- KASTRIERT -->
-          <div>
-            <span>Kastriert</span>
-          </div>
-          <div>
-            <label for="kastriertJa">Ja</label>
-            <input type="radio" name="kastriertSelect" id="kastriertJa" data-ng-model="kaninchen.kastriertJa">
-          </div>
-          <div>
-            <label for="kastriertNein">Nein</label>
-            <input type="radio" name="kastriertSelect" id="kastriertJa" data-ng-model="kaninchen.kastriertNein">
-          </div>
-          <br>
-
-          <!-- BIRTHDAY -->
-          <label for="kastriertNein">Geburstag</label>
-          <br>
-          <input type="date" name="birthday" placeholder="Kaninchen Geburstag" data-ng-model="kaninchen.birthday"
-            required>
-          <span ng-if="rabbitForm.$invalid">* </span>
-          <span class="filledData">{{ kaninchen.birthday }}</span><br>
-          <span class="filledData">Hinweis: Wenn Sie das genaue Datum nicht kennen,</span>
-          <br>
-          <span class="filledData">geben Sie ein ungefähre Datum an.</span>
-          <br>
-          <span ng-if="rabbitForm.email.$invalid && rabbitForm.email.$touched">
-            Bitte geben Sie ein Nummer (Jahren)
-          </span>
-          <br>
-
-          <!-- GEWICHT -->
-          <input type="number" name="weight" placeholder="Kaninchen Gewicht" data-ng-model="kaninchen.weight" required
-            minlength="1" ng-maxlength="10">
-          <span ng-if="rabbitForm.$invalid">* </span>
-          <span data-ng-if="kaninchen.weight">Kaninchen Gewicht: </span>
-          <span class="filledData">{{ kaninchen.weight }}</span>
-          <br>
-          <span
-            ng-if="(rabbitForm.userlastname.$error.minlength || rabbitForm.userlastname.$error.required) && rabbitForm.userlastname.$touched">
-            Bitte geben Sie ein gewicht nummer (KG)
-          </span>
-          <br>
-
-          <!-- CITY -->
-          <input type="text" name="city" placeholder="Stadt" data-ng-model="kaninchen.city" required>
-          <span ng-if="rabbitForm.$invalid">* </span>
-          <span data-ng-if="kaninchen.city">Stadt: </span>
-          <span class="filledData">{{ kaninchen.city }}</span>
-          <br>
-          <span ng-if="rabbitForm.email.$invalid && rabbitForm.email.$touched">
-            Bitte geben Sie ein Stadt
-          </span>
-          <br>
-
-          <!-- MOVEMENT -->
-          <div>
-            <span>Kannst Du von deiner Stadt in eine andere Stadt ziehen, </span><br>
-            <span> um deinem Kaninchen zu geben?</span>
-          </div>
-          <div>
-            <label for="movementYes">Ja</label>
-            <input type="radio" name="movementSelect" id="movementYes" data-ng-model="kaninchen.movementYes">
-          </div>
-          <div>
-            <label for="movementNo">Nein</label>
-            <input type="radio" name="movementSelect" id="movementNo" data-ng-model="kaninchen.movementNo">
-          </div>
-          <br>
-
-          <!-- VACCINEN -->
-          <div>
-            Vaccinen:
-          </div>
-          <div>
-            <span>RHD</span>
-            <input type="checkbox">
-          </div>
-          <div>
-            <span>RHD II</span>
-            <input type="checkbox">
-          </div>
-          <div>
-            <span>Mixomatose</span>
-            <input type="checkbox">
-          </div>
-          <br>
-
-          <!-- E CUNICULI -->
-          <div>
-            <span>E Cuniculi:</span>
-          </div>
-          <div>
-            <label for="positive">Positiv</label>
-            <input type="radio" name="EcuniculiSelect" id="positive" data-ng-model="kaninchen.eCuniculiPositive">
-          </div>
-          <div>
-            <label for="negative">Negativ</label>
-            <input type="radio" name="EcuniculiSelect" id="negative" data-ng-model="kaninchen.eCuniculiNegative">
-          </div>
-          <div>
-            <label for="noTest">Nicht getested</label>
-            <input type="radio" name="EcuniculiSelect" id="noTest" data-ng-model="kaninchen.eCuniculiNotTested">
-          </div>
-          <br>
-                    
-          <!-- INSIDE / OUTSIDE -->
-          <div>
-            <span>Das Kaninchen lebt innen oder außen?</span>
-          </div>
-          <div>
-            <label for="inside">Innen</label>
-            <input type="radio" name="liveSelect" id="inside" data-ng-model="kaninchen.inside">
-          </div>
-          <div>
-            <label for="outside">Außen</label>
-            <input type="radio" name="liveSelect" id="outside" data-ng-model="kaninchen.outside">
-          </div>
-          <div>
-            <label for="both">Beide (Innen und Außen)</label>
-            <input type="radio" name="liveSelect" id="both" data-ng-model="kaninchen.both">
-          </div>
-          <br>
-
-          <!-- VALUE -->
-          <div>
-            <span>Kaninchen Schutzgebühr</span>
-          </div>
-          <div>            
-            <input type="number" name="value" id="value" data-ng-model="kaninchen.value">
-            <span>€</span>
-          </div>          
-          <br>
-
-          <!-- CONTACT DATA -->
-          <div>
-              <div>
-                <label for="noTest">Kontact Daten (Diese Daten werden nicht veröffentlicht)</label>
-              </div>
-              <div>
-                  <input type="text" name="ownerName" placeholder="Besitzer Name" data-ng-model="kaninchen.ownerName"
-                    required minlength="2" ng-maxlength="20">
-                  <span ng-if="rabbitForm.$invalid">* </span>
-                  <span class="filledData" data-ng-if="kaninchen.ownerName">Besitzer Name</span>
-                </div>
-                <br>
-              <div>
-                  <input type="text" name="ownerLasName" placeholder="Besitzer Nachname" data-ng-model="kaninchen.ownerLastName"
-                    required minlength="2" ng-maxlength="20">
-                  <span ng-if="rabbitForm.$invalid">* </span>                  
-                  <span class="filledData" data-ng-if="kaninchen.ownerLastName">Besitzer Nachname</span>
-                </div>
-                <br>
-              <div>
-                <input type="number" name="phoneNumber" placeholder="Telefonnummer" data-ng-model="kaninchen.phoneNumber"
-                  required minlength="4" ng-maxlength="20">
+      <div class="row">
+        <button data-ng-click="kaninchen.show('formular');">FORMULAR</button>
+        <button data-ng-click="kaninchen.show('table');">TABLE</button>
+      </div>
+      <!-- FORMULAR -->
+      <div data-ng-if="kaninchen.showFormular">
+        <h3>Kaninchenseele Formular</h3>
+        <button ng-click="kaninchen.preLoadData();">pre-Load Data</button>
+        <fieldset>
+          <form name='rabbitForm' novalidate>
+            <div class="row">
+              <div class="col-md-6">
+                <!-- NAME -->
+                <input type="text" name="name" placeholder="Kaninchen Name" data-ng-model="kaninchen.name" required
+                  minlength="1">
                 <span ng-if="rabbitForm.$invalid">* </span>
-                <span class="filledData" data-ng-if="kaninchen.phoneNumber">Telefonnummer</span>
+                <span data-ng-if="kaninchen.name" class="filledData">Kaninchen Name:</span>
+                <span>{{ kaninchen.name }}</span>
+                <br>
+                <span
+                  ng-if="(rabbitForm.username.$error.minlength || rabbitForm.username.$error.required) && rabbitForm.username.$touched">
+                  kaninchen name must be 2 characters long
+                </span>
+                <br>
+
+                <!-- GENDER -->
+                <div>
+                  <span>Geschlecht</span>
+                </div>
+                <div>
+                  <label for="male">Männlich</label>
+                  <input type="radio" name="genderSelect" id="male" data-ng-model="kaninchen.male">
+                </div>
+                <div>
+                  <label for="female">Weiblich</label>
+                  <input type="radio" name="genderSelect" id="female" data-ng-model="kaninchen.female">
+                </div>
+                <br>
+
+                <!-- KASTRIERT -->
+                <div>
+                  <span>Kastriert</span>
+                </div>
+                <div>
+                  <label for="kastriertJa">Ja</label>
+                  <input type="radio" name="kastriertSelect" id="kastriertJa" data-ng-model="kaninchen.kastriertJa">
+                </div>
+                <div>
+                  <label for="kastriertNein">Nein</label>
+                  <input type="radio" name="kastriertSelect" id="kastriertJa" data-ng-model="kaninchen.kastriertNein">
+                </div>
+                <br>
+
+                <!-- BIRTHDAY -->
+                <label for="kastriertNein">Geburstag</label>
+                <br>
+                <input type="date" name="birthday" placeholder="Kaninchen Geburstag" data-ng-model="kaninchen.birthday"
+                  required>
+                <span ng-if="rabbitForm.$invalid">* </span>
+                <span class="filledData">{{ kaninchen.birthday }}</span><br>
+                <span class="filledData">Hinweis: Wenn Sie das genaue Datum nicht kennen,</span>
+                <br>
+                <span class="filledData">geben Sie ein ungefähre Datum an.</span>
+                <br>
+                <span ng-if="rabbitForm.email.$invalid && rabbitForm.email.$touched">
+                  Bitte geben Sie ein Nummer (Jahren)
+                </span>
+                <br>
+
+                <!-- GEWICHT -->
+                <input type="number" name="weight" placeholder="Kaninchen Gewicht" data-ng-model="kaninchen.weight"
+                  required minlength="1" ng-maxlength="10">
+                <span ng-if="rabbitForm.$invalid">* </span>
+                <span data-ng-if="kaninchen.weight">Kaninchen Gewicht: </span>
+                <span class="filledData">{{ kaninchen.weight }}</span>
+                <br>
+                <span
+                  ng-if="(rabbitForm.userlastname.$error.minlength || rabbitForm.userlastname.$error.required) && rabbitForm.userlastname.$touched">
+                  Bitte geben Sie ein gewicht nummer (KG)
+                </span>
+                <br>
+
+                <!-- CITY -->
+                <input type="text" name="city" placeholder="Stadt" data-ng-model="kaninchen.city" required>
+                <span ng-if="rabbitForm.$invalid">* </span>
+                <span data-ng-if="kaninchen.city">Stadt: </span>
+                <span class="filledData">{{ kaninchen.city }}</span>
+                <br>
+                <span ng-if="rabbitForm.email.$invalid && rabbitForm.email.$touched">
+                  Bitte geben Sie ein Stadt
+                </span>
+                <br>
+
+                <!-- MOVEMENT -->
+                <div>
+                  <span>Kannst Du von deiner Stadt in eine andere Stadt ziehen, </span><br>
+                  <span> um deinem Kaninchen zu geben?</span>
+                </div>
+                <div>
+                  <label for="movementYes">Ja</label>
+                  <input type="radio" name="movementSelect" id="movementYes" data-ng-model="kaninchen.movementYes">
+                </div>
+                <div>
+                  <label for="movementNo">Nein</label>
+                  <input type="radio" name="movementSelect" id="movementNo" data-ng-model="kaninchen.movementNo">
+                </div>
+                <br>
+
+                <!-- VACCINEN -->
+                <div>
+                  Vaccinen:
+                </div>
+                <div>
+                  <span>RHD</span>
+                  <input type="checkbox">
+                </div>
+                <div>
+                  <span>RHD II</span>
+                  <input type="checkbox">
+                </div>
+                <div>
+                  <span>Mixomatose</span>
+                  <input type="checkbox">
+                </div>
+                <br>
               </div>
+
+              <div class="col-md-6">
+
+                <!-- E CUNICULI -->
+                <div>
+                  <span>E Cuniculi:</span>
+                </div>
+                <div>
+                  <label for="positive">Positiv</label>
+                  <input type="radio" name="EcuniculiSelect" id="positive" data-ng-model="kaninchen.eCuniculiPositive">
+                </div>
+                <div>
+                  <label for="negative">Negativ</label>
+                  <input type="radio" name="EcuniculiSelect" id="negative" data-ng-model="kaninchen.eCuniculiNegative">
+                </div>
+                <div>
+                  <label for="noTest">Nicht getested</label>
+                  <input type="radio" name="EcuniculiSelect" id="noTest" data-ng-model="kaninchen.eCuniculiNotTested">
+                </div>
+                <br>
+
+                <!-- INSIDE / OUTSIDE -->
+                <div>
+                  <span>Das Kaninchen lebt innen oder außen?</span>
+                </div>
+                <div>
+                  <label for="inside">Innen</label>
+                  <input type="radio" name="liveSelect" id="inside" data-ng-model="kaninchen.inside">
+                </div>
+                <div>
+                  <label for="outside">Außen</label>
+                  <input type="radio" name="liveSelect" id="outside" data-ng-model="kaninchen.outside">
+                </div>
+                <div>
+                  <label for="both">Beide (Innen und Außen)</label>
+                  <input type="radio" name="liveSelect" id="both" data-ng-model="kaninchen.both">
+                </div>
+                <br>
+
+                <!-- VALUE -->
+                <div>
+                  <span>Kaninchen Schutzgebühr</span>
+                </div>
+                <div>
+                  <input type="number" name="value" id="value" data-ng-model="kaninchen.value">
+                  <span>€</span>
+                </div>
+
+                <!-- CONTACT DATA -->
+                <div>
+                  <div>
+                    <label for="noTest">Kontact Daten (Diese Daten werden nicht veröffentlicht)</label>
+                  </div>
+                  <div>
+                    <input type="text" name="ownerName" placeholder="Besitzer Name" data-ng-model="kaninchen.ownerName"
+                      required minlength="2" ng-maxlength="20">
+                    <span ng-if="rabbitForm.$invalid">* </span>
+                    <span class="filledData" data-ng-if="kaninchen.ownerName">Besitzer Name</span>
+                  </div>
+                  <br>
+                  <div>
+                    <input type="text" name="ownerLasName" placeholder="Besitzer Nachname"
+                      data-ng-model="kaninchen.ownerLastName" required minlength="2" ng-maxlength="20">
+                    <span ng-if="rabbitForm.$invalid">* </span>
+                    <span class="filledData" data-ng-if="kaninchen.ownerLastName">Besitzer Nachname</span>
+                  </div>
+                  <br>
+                  <div>
+                    <input type="number" name="phoneNumber" placeholder="Telefonnummer"
+                      data-ng-model="kaninchen.phoneNumber" required minlength="4" ng-maxlength="20">
+                    <span ng-if="rabbitForm.$invalid">* </span>
+                    <span class="filledData" data-ng-if="kaninchen.phoneNumber">Telefonnummer</span>
+                  </div>
+                  <br>
+                  <div>
+                    <input type="text" name="email" placeholder="E-Mail" data-ng-model="kaninchen.email" required
+                      minlength="4" ng-maxlength="40">
+                    <span ng-if="rabbitForm.$invalid">* </span>
+                    <span class="filledData" data-ng-if="kaninchen.email">E-Mail</span>
+                  </div>
+                </div>
+                <br>
+
+                <!-- COMMENTS -->
+                <label for="noTest">Kommentaren (250 Charaktere maximal)</label>
+                <div>
+                  <textarea rows="5" cols="50" data-ng-model="kaninchen.comment"></textarea>
+                </div>
+                {{ kaninchen.comment }}
+                <br>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <button class="buttons" ng-disabled="rabbitForm.$invalid">Submit</button>
+
               <br>
-              <div>
-                <input type="text" name="email" placeholder="E-Mail" data-ng-model="kaninchen.email" required
-                  minlength="4" ng-maxlength="40">
-                <span ng-if="rabbitForm.$invalid">* </span>
-                <span class="filledData" data-ng-if="kaninchen.email">E-Mail</span>
-              </div>
+              <span ng-if="rabbitForm.$invalid" class="filledData">Bitte geben Sie alle Daten</span>
+              <span ng-if="rabbitForm.$invalid"> (*)</span>
             </div>
-            <br>
-  
-            <!-- COMMENTS -->
-            <label for="noTest">Kommentaren (250 Charaktere maximal)</label>
-            <div>
-              <textarea rows="5" cols="50" data-ng-model="kaninchen.comment"></textarea>
-            </div>
-            {{ kaninchen.comment }}
-            <br>
-  
+          </form>
+        </fieldset>
+        <br>
+      </div>
 
-          <button class="buttons" ng-disabled="rabbitForm.$invalid">Submit</button>
-
-          <br>
-          <span ng-if="rabbitForm.$invalid" class="filledData">Bitte geben Sie alle Daten</span>
-          <span ng-if="rabbitForm.$invalid"> (*)</span>
-        </form>
-      </fieldset>
-      <br>
-      <div ui-grid="{ data: kaninchen.myData }" class="myGrid"></div>
+      <!-- TABLE  -->
+      <div class="col-md-12" data-ng-if="kaninchen.showTable">
+        <div ui-grid="{ data: kaninchen.myData }" class="myGrid"></div>
+      </div>
 
       <div id="info" ng-if="sign.completed" class="itemsToDisplay">
         <p class="succesMessage"> All the data provided has been saved on the "My Info" seccion</p><br>

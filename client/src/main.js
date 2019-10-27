@@ -75,6 +75,8 @@
       kaninchen.phoneNumber = 4917658881817;
     };
 
+    kaninchen.showFormular = true;
+    kaninchen.showTable = false;
 
     kaninchen.myData = [{
       "name": "Félix",
@@ -175,6 +177,17 @@
       "city": "Hamburg",
       "postal code": "57063"
     }];
+
+    kaninchen.show = function (partToShow) {
+
+      if (partToShow === 'formular') {
+        kaninchen.showFormular = true;
+        kaninchen.showTable = false;
+      } else if (partToShow === 'table') {
+        kaninchen.showFormular = false;
+        kaninchen.showTable = true;
+      }
+    };
   }
 
 
