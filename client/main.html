@@ -38,21 +38,27 @@
 </head>
 
 <body data-ng-app="kaninchenApp">
+  <!-- <img id="fondo" src="../public/images/background-img.jpg" /> -->
   <div class="container-fluid" data-ng-controller="kaninchenController as kaninchen">
     <div class="alignBox">
-
-      <div class="row">
+      <div class="col-md-12">
+        <img id="header" src="../public/images/header-img.jpg" />
+      </div>
+      <div class="row col-md-12 padding-top-10">
         <button data-ng-click="kaninchen.show('formular');">FORMULAR</button>
         <button data-ng-click="kaninchen.show('table');">TABLE</button>
       </div>
       <!-- FORMULAR -->
       <div data-ng-if="kaninchen.showFormular">
-        <h3>Kaninchenseele Formular</h3>
+        <div class="span-style-title">
+          <h3>Kaninchenseele Formular</h3>
+        </div>
         <button ng-click="kaninchen.preLoadData();">pre-Load Data</button>
         <fieldset>
           <form name='rabbitForm' novalidate>
             <div class="row">
               <div class="col-md-6">
+                <div class="span-style-title">Kaninchen Name</div>
                 <!-- NAME -->
                 <input type="text" name="name" placeholder="Kaninchen Name" data-ng-model="kaninchen.name" required
                   minlength="1">
@@ -67,8 +73,8 @@
                 <br>
 
                 <!-- GENDER -->
-                <div>
-                  <span>Geschlecht</span>
+                <div class="span-style-title">
+                  Geschlecht
                 </div>
                 <div>
                   <label for="male">Männlich</label>
@@ -81,8 +87,8 @@
                 <br>
 
                 <!-- KASTRIERT -->
-                <div>
-                  <span>Kastriert</span>
+                <div class="span-style-title">
+                  Kastriert
                 </div>
                 <div>
                   <label for="kastriertJa">Ja</label>
@@ -95,7 +101,9 @@
                 <br>
 
                 <!-- BIRTHDAY -->
-                <label for="kastriertNein">Geburstag</label>
+                <div class="span-style-title">
+                  Geburstag
+                </div>
                 <br>
                 <input type="date" name="birthday" placeholder="Kaninchen Geburstag" data-ng-model="kaninchen.birthday"
                   required>
@@ -135,9 +143,9 @@
                 <br>
 
                 <!-- MOVEMENT -->
-                <div>
-                  <span>Kannst Du von deiner Stadt in eine andere Stadt ziehen, </span><br>
-                  <span> um deinem Kaninchen zu geben?</span>
+                <div class="span-style-title">
+                  Kannst Du von deiner Stadt in eine andere Stadt ziehen,
+                  um deinem Kaninchen zu geben?
                 </div>
                 <div>
                   <label for="movementYes">Ja</label>
@@ -150,8 +158,8 @@
                 <br>
 
                 <!-- VACCINEN -->
-                <div>
-                  Vaccinen:
+                <div class="span-style-title">
+                  Vaccinen
                 </div>
                 <div>
                   <span>RHD</span>
@@ -171,8 +179,8 @@
               <div class="col-md-6">
 
                 <!-- E CUNICULI -->
-                <div>
-                  <span>E Cuniculi:</span>
+                <div class="span-style-title">
+                  E Cuniculi
                 </div>
                 <div>
                   <label for="positive">Positiv</label>
@@ -189,8 +197,8 @@
                 <br>
 
                 <!-- INSIDE / OUTSIDE -->
-                <div>
-                  <span>Das Kaninchen lebt innen oder außen?</span>
+                <div class="span-style-title">
+                  Das Kaninchen lebt innen oder außen?
                 </div>
                 <div>
                   <label for="inside">Innen</label>
@@ -207,8 +215,8 @@
                 <br>
 
                 <!-- VALUE -->
-                <div>
-                  <span>Kaninchen Schutzgebühr</span>
+                <div class="span-style-title">
+                  Kaninchen Schutzgebühr
                 </div>
                 <div>
                   <input type="number" name="value" id="value" data-ng-model="kaninchen.value">
@@ -217,7 +225,7 @@
 
                 <!-- CONTACT DATA -->
                 <div>
-                  <div>
+                  <div class="span-style-title">
                     <label for="noTest">Kontact Daten (Diese Daten werden nicht veröffentlicht)</label>
                   </div>
                   <div>
@@ -251,11 +259,11 @@
                 <br>
 
                 <!-- COMMENTS -->
-                <label for="noTest">Kommentaren (250 Charaktere maximal)</label>
+                <div for="noTest" class="span-style-title">Kommentaren (250 Charaktere maximal)</div>
                 <div>
                   <textarea rows="5" cols="50" data-ng-model="kaninchen.comment"></textarea>
                 </div>
-                {{ kaninchen.comment }}
+                <!-- {{ kaninchen.comment }} -->
                 <br>
               </div>
             </div>

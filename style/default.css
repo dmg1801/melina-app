@@ -1,5 +1,72 @@
-
 .myGrid {
-    width: auto;
-    height: auto;
-  }
+  width: auto;
+  height: auto;
+}
+
+body {
+  overflow-y: scroll;
+
+  font-size: 1.5em;
+  font-family: sans-serif;
+
+  background-image: url("../public/images/background-img.jpg");
+  background-repeat: repeat;
+  z-index: -50;
+}
+
+button {
+  border: 4px solid #605040;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  height: 60px;
+  width: auto;
+
+  background-color: #F0F5DA;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+button:hover {
+  border: 4px solid #887058;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  height: 60px;
+  width: auto;
+
+  background-color: rgb(231, 198, 127);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#header {
+  position: relative;
+  top: 20px;
+  left: 10%;
+  right: 10%;
+
+  border: 4px solid #605040;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  height: 100px;
+  width: auto;
+
+  background-color: #F0F5DA;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.span-style-title {
+  border: 2px solid #5b9e52;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  height: auto;
+  width: 50%;
+
+  background-color: #c0f0a0;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.padding-top-10 {
+  padding-top: 3%;
+}
