@@ -1,3 +1,9 @@
+Mittwoch 25.12.2019
+
+Para la fecha de nacimiento del conejo (El texto debe ser 
+el explicado por Melina) debe surgir cómo un "concejo de ayuda" 
+
+-------------------------------------------------------------------
 Montag 29.07.2019
 
 browser-sync start --server --directory --files "**/*"

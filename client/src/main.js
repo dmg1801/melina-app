@@ -5,9 +5,9 @@
     .controller('kaninchenController', kaninchenController);
 
 
-  kaninchenController.$inject = [];
+  kaninchenController.$inject = ['$scope', '$http'];
 
-  function kaninchenController() {
+  function kaninchenController($scope, $http) {
     var kaninchen = this;
 
     // kaninchen = {};
@@ -77,6 +77,20 @@
 
     kaninchen.showFormular = true;
     kaninchen.showTable = false;
+
+    kaninchen.sendInformation = function () {
+      $http.post('/sendmail', {
+        from: 'CodeNx <admin@angularcode.com>',
+        to: 'support@codenx.com',
+        subject: 'Message from AngularCode',
+        text: 'text about rabbits'
+      }).then(res => {
+        $scope.loading = false;
+        console.log('Email sent successfully');
+      });
+
+
+    };
 
     kaninchen.myData = [{
       "name": "Félix",

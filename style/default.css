@@ -56,6 +56,7 @@ button:hover {
 }
 
 .span-style-title {
+  padding-left: 0.5em;
   border: 2px solid #5b9e52;
   border-radius: 10px;
   -moz-border-radius: 10px;
@@ -67,6 +68,35 @@ button:hover {
   background-repeat: no-repeat;
 }
 
+.background-content {
+  border: 2px solid #F0F5DA;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  height: auto;
+  width: 50%;
+
+  background-color: #F0F5DA;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.span-style-content {
+  padding-left: 0.5em;
+  color: #6d5d44;
+}
+
+.span-style-content:hover {
+  cursor: pointer;
+  padding-left: 0.5em;
+  color: #946e30;
+}
+
 .padding-top-10 {
   padding-top: 3%;
+}
+
+.big-check {
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
 }
