@@ -32,7 +32,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
-  <link rel="stylesheet" href="../style/default.css" type="text/css">
+  <link rel="stylesheet" href="style/default.css" type="text/css">
   <script src="src/main.js"></script>
   <title>Kaninchenseele Formular</title>
 </head>
@@ -42,7 +42,7 @@
   <div class="container-fluid" data-ng-controller="kaninchenController as kaninchen">
     <div class="alignBox">
       <div class="col-md-12">
-        <img id="header" src="../public/images/header-img.jpg" />
+        <img id="header" src="public/images/header-img.jpg" />
       </div>
       <div class="row col-md-12 padding-top-10">
         <button data-ng-click="kaninchen.show('formular');">FORMULAR</button>
@@ -299,7 +299,7 @@
               </div>
             </div>
             <div class="col-md-12">
-              <button class="buttons" data-ng-click="kaninchen.sendInformation();">Submit</button>
+              <button class="buttons" data-ng-click="send()">Submit</button>
 
               <br>
               <span ng-if="rabbitForm.$invalid" class="filledData">Bitte geben Sie alle Daten</span>

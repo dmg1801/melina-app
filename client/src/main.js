@@ -10,7 +10,7 @@
   function kaninchenController($scope, $http) {
     var kaninchen = this;
 
-    // kaninchen = {};
+    //kaninchen = {};
 
     //text variables
     kaninchen.name = null;
@@ -21,7 +21,7 @@
     kaninchen.ownerLastName = null;
     kaninchen.value = null;
     //text field
-    kaninchen.comment = [];
+    kaninchen.comment = 'Hallo Guten tag';
 
     //boolean variables
     kaninchen.rhd = false;
@@ -53,7 +53,7 @@
       kaninchen.ownerLastName = "Sollbrecht";
       kaninchen.value = 1500;
       //text field
-      kaninchen.comment = ['Ein super Toll Kaninchen. Ja, es ist alle :D'];
+      kaninchen.comment = 'Ein super Toll Kaninchen. Ja, es ist alle :D';
 
       //boolean variables
       kaninchen.rhd = true;
@@ -78,19 +78,17 @@
     kaninchen.showFormular = true;
     kaninchen.showTable = false;
 
-    kaninchen.sendInformation = function () {
-      $http.post('/sendmail', {
-        from: 'CodeNx <admin@angularcode.com>',
-        to: 'support@codenx.com',
-        subject: 'Message from AngularCode',
-        text: 'text about rabbits'
-      }).then(res => {
-        $scope.loading = false;
-        console.log('Email sent successfully');
-      });
-
-
-    };
+    //   kaninchen.sendInformation = function () {
+    //     $http.post('/sendmail', {
+    //       from: 'CodeNx <admin@angularcode.com>',
+    //       to: 'support@codenx.com',
+    //       subject: 'Message from AngularCode',
+    //       text: 'text about rabbits'
+    //     }).then(res => {
+    //       $scope.loading = false;
+    //       console.log('Email sent successfully');
+    //     });
+    // };
 
     kaninchen.myData = [{
       "name": "Félix",
@@ -191,6 +189,21 @@
       "city": "Hamburg",
       "postal code": "57063"
     }];
+
+    //e-mail part
+    $scope.send = function () {
+      $scope.loading = true;
+      $http.post('/sendmail', {
+        from: 'mongaydiego@gmail.com',
+        //to: 'klein.melina@web.de',
+        to: 'mongaydiego@gmail.com',
+        subject: 'Nachricht von Kaninchenssele.de',
+        text: kaninchen.comment
+      }).then(res => {
+        $scope.loading = false;
+        $scope.serverMessage = 'Email sent successfully';
+      });
+    };
 
     kaninchen.show = function (partToShow) {
 

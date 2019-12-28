@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -21,9 +21,10 @@
   },
   "homepage": "https://github.com/dmg1801/melina-app#readme",
   "dependencies": {
-    "body-parser": "^1.14.2",
-    "express": "^4.13.4",
-    "nodemailer": "6.4.1",
-    "nodemailer-sendgrid-transport": "^0.2.0"
+    "@sendgrid/mail": "^6.2.1",
+    "sendgrid": "^5.2.3",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2"
   }
 }
