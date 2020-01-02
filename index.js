@@ -1,10 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var apiConfig = require('../melina-app/config');
 require('dotenv').config()
 
 var app = express();
 
 app.use(express.static(__dirname + '/client'));
+
 // app.use(express.static(__dirname + '/lib'));
 // app.use(express.static(__dirname + '/public'));
 // app.use(express.static(__dirname + '/style'));
@@ -22,7 +24,9 @@ app.post('/sendmail', function (req, res) {
     let content = new helper.Content('text/plain', req.body.text);
     let mail = new helper.Mail(fromEmail, subject, toEmail, content);
 
-    let sg = require('sendgrid')(process.env.SENDGRID_API_KEY = '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');
+    var smokey = apiConfig.GRNTRNVRSCHRNGVRTRGBSSCHLSS;
+
+    let sg = require('sendgrid')(process.env.SENDGRID_API_KEY = smokey);
     let request = sg.emptyRequest({
         method: 'POST',
         path: '/v3/mail/send',

@@ -21,7 +21,7 @@
     kaninchen.ownerLastName = null;
     kaninchen.value = null;
     //text field
-    kaninchen.comment = 'Hallo Guten tag';
+    $scope.comment = null;
 
     //boolean variables
     kaninchen.rhd = false;
@@ -188,20 +188,68 @@
       "living": "draußen",
       "city": "Hamburg",
       "postal code": "57063"
+    }, , {
+      "name": "Pepper",
+      "gender": "Mannlich",
+      "weight": "1.356",
+      "age": "5",
+      "value": "5006",
+      "comment": "Weiß Braun. klein un Süß",
+      "rhd": false,
+      "rhdTwo": true,
+      "myxomatose": false,
+      "eCuniculi": true,
+      "living": "draußen",
+      "city": "Hamburg",
+      "postal code": "57063"
     }];
+
+    kaninchen.toSend = {
+      "name": kaninchen.name,
+      "gender": kaninchen.gender,
+      "weight": kaninchen.weight,
+      "age": kaninchen.age,
+      "value": kaninchen.value,
+      "comment": $scope.comment,
+      "rhd": kaninchen.rhd,
+      "rhdTwo": kaninchen.rhdTwo,
+      "myxomatose": kaninchen.myxomatose,
+      "eCuniculi": kaninchen.eCuniculi,
+      "living": kaninchen.living,
+      "city": kaninchen.city,
+      "postal code": kaninchen.phoneNumber
+    };
 
     //e-mail part
     $scope.send = function () {
+      kaninchen.jsonRabbit = JSON.stringify(kaninchen.toSend);
       $scope.loading = true;
       $http.post('/sendmail', {
-        from: 'mongaydiego@gmail.com',
+        from: 'info@kaninchenseele.de',
         //to: 'klein.melina@web.de',
         to: 'mongaydiego@gmail.com',
-        subject: 'Nachricht von Kaninchenssele.de',
-        text: kaninchen.comment
+        subject: 'Nachricht von Kaninchenseele.de',
+        //text: 'Willkommen zu kaninchenseele.de!',
+        text: `
+        Kaninchen Datum:
+        Name:${kaninchen.name} 
+        Geschlecht:${kaninchen.gender}
+        Kommentar:${kaninchen.comment}
+        Geburstag: ${kaninchen.age}
+        Gewicht: ${kaninchen.weight}
+        Schützgebühr: ${kaninchen.value}
+
+        Besitzer Datum:
+        Name: ${kaninchen.ownerName}
+        Familienname: ${kaninchen.ownerLastName}
+        Telefonnummer: ${kaninchen.phoneNumber}
+        E-mail: ${kaninchen.email} 
+        `
+
       }).then(res => {
         $scope.loading = false;
         $scope.serverMessage = 'Email sent successfully';
+        console.log('Email sent!!!');
       });
     };
 
