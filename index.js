@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var apiConfig = require('../melina-app/config');
-require('dotenv').config()
+//require('dotenv').config();
 
 var app = express();
 
@@ -24,7 +24,7 @@ app.post('/sendmail', function (req, res) {
     let content = new helper.Content('text/plain', req.body.text);
     let mail = new helper.Mail(fromEmail, subject, toEmail, content);
 
-    var smokey = apiConfig.GRNTRNVRSCHRNGVRTRGBSSCHLSS;
+    //var smokey = apiConfig.GRNTRNVRSCHRNGVRTRGBSSCHLSS;
 
     let sg = require('sendgrid')(process.env.SENDGRID_API_KEY = smokey);
     let request = sg.emptyRequest({
