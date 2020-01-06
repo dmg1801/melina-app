@@ -26,7 +26,7 @@ app.post('/sendmail', function (req, res) {
 
     //var smokey = apiConfig.GRNTRNVRSCHRNGVRTRGBSSCHLSS;
 
-    const kaninchenseele = smokey;
+    const kaninchenseele = process.env.smokey;
 
     let sg = require('sendgrid')(process.env.SENDGRID_API_KEY = kaninchenseele);
     let request = sg.emptyRequest({
