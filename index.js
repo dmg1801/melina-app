@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 //var apiConfig = require('../melina-app/config');
-require('dotenv').config()
+require('dotenv').config();
 
 var app = express();
 
