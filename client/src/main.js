@@ -188,7 +188,7 @@
       "living": "draußen",
       "city": "Hamburg",
       "postal code": "57063"
-    }, , {
+    }, {
       "name": "Pepper",
       "gender": "Mannlich",
       "weight": "1.356",

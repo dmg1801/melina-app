@@ -80,6 +80,23 @@ button:hover {
   background-repeat: no-repeat;
 }
 
+.input-border {
+  border: 2px solid rgb(46, 46, 45);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  height: auto;
+  padding-left: 0.5em;
+}
+
+.span-style-help {
+  padding-left: 0.5em;
+  color: #6d5d44;
+
+  border: 2px solid rgb(46, 46, 45);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
 .span-style-content {
   padding-left: 0.5em;
   color: #6d5d44;
